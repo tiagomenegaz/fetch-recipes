@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.cache_store = :redis_cache_store, { url: ENV['REDIS_URI'] }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
