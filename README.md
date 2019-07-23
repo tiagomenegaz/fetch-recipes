@@ -11,7 +11,8 @@ In the first time running this project you should run:
 
 ```
 docker-compose pull &&
-docker-compose run --rm app bundle install
+docker-compose run --rm app bundle install &&
+docker-compose run --rm worker bundle install
 ```
 
 Now, you can run the following command to run all project's dependencies:
