@@ -7,7 +7,7 @@ Fetch Recipes is totally supported with Docker so make sure you have it propertl
 
 Make sure you've copied and renamed your `.env.sample` to `.env`.
 
-In the first time running this project you should run:
+The first time running this project you should run:
 
 ```
 docker-compose pull &&
