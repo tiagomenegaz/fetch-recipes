@@ -38,6 +38,26 @@ services:
     networks:
       - net
 
+  worker:
+    build: .
+    container_name: recipes-worker
+    command: sidekiq -C config/sidekiq.yml
+    depends_on:
+      - db
+      - cache
+    volumes:
+      - .:/usr/src/app
+      - gems:/usr/local/bundle
+      - home:/home/app
+    networks:
+      - net
+    depends_on:
+      - db
+      - cache
+    env_file: .env
+    tty: true
+    stdin_open: true
+
 volumes:
   database:
   cache:
