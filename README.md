@@ -20,6 +20,7 @@ Now, you can run the following command to run all project's dependencies:
 docker-compose pull &&
 docker-compose run --rm app rake db:create &&
 docker-compose run --rm app rake db:migrate &&
+docker-compose run --rm worker rake populate:space &&
 docker-compose up
 ```
 
