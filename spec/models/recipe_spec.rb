@@ -10,7 +10,6 @@ RSpec.describe Recipe, type: :model do
           title: "Recipe Title",
           image: "link/to/image",
           description: "Recipe Description",
-          chef_name: "Chef Name",
         }
       end
       it { expect(subject.new(params).valid?).to be_truthy }

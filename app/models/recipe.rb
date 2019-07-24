@@ -1,5 +1,5 @@
 class Recipe < ApplicationRecord
-  validates :title, :image, :description, :chef_name, presence: true
+  validates :title, :image, :description, presence: true
 
   belongs_to :tag
 end
