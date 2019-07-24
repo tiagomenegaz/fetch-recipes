@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 4.0'
 
 gem 'dry-initializer', '~> 3.0', '>= 3.0.1'
+gem 'dry-validation', '~> 1.2', '>= 1.2.1'
 
 gem 'sidekiq', '~> 5.2', '>= 5.2.7'
 # Use ActiveModel has_secure_password
