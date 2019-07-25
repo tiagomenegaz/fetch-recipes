@@ -1,0 +1,7 @@
+<h1>Recipes#index</h1>
+
+<% @recipes.each do |recipe| %>
+  <%= recipe.title %>
+  <%= recipe.image %>
+  <%= link_to 'Show', recipe_url(recipe) %>
+<% end %>
