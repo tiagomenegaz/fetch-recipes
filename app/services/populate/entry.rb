@@ -23,7 +23,7 @@ module Populate
 
     def service
       pluralized_model = ActiveSupport::Inflector.pluralize(model_name)
-      "#{pluralized_model}::Creator".constantize
+      "#{pluralized_model.capitalize}::Creator".constantize
     end
 
     def supported_models

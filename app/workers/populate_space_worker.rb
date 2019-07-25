@@ -1,7 +1,7 @@
 class PopulateSpaceWorker
   include Sidekiq::Worker
 
-  def perform(*args)
-    puts "WIP"
+  def perform
+    Populate::Content.new.()
   end
 end
