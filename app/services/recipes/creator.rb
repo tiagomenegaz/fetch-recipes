@@ -13,11 +13,13 @@ module Recipes
     private
 
     def save_recipe
-      Recipe.create!(recipe_params)
+      recipe = Recipe.new(recipe_params)
+      recipe.tag_ids = tag_ids
+      recipe.save!
     end
 
     def recipe_params
-      base_fields.merge(**photo_fields, **tags_field, **chef_field)
+      base_fields.merge(**photo_fields, **chef_id)
     end
 
     def base_fields
@@ -29,32 +31,22 @@ module Recipes
       url.present? ? { image: url } : {}
     end
 
-    def tags_field
-      attributes = if fields.has_key?(:tags)
+    def tag_ids
+      if fields.has_key?(:tags)
         fields[:tags].map do |tag|
           tag_instance = Tags::Creator.new(fields: tag.fields).()
-          tag_instance.attributes.slice(:id)
+          tag_instance.id
         end
-      else
-        []
       end
-
-      {
-        tags_attributes: attributes
-      }
     end
 
-    def chef_field
-      attributes = if fields.has_key?(:chef)
+    def chef_id
+      if fields.has_key?(:chef)
         chef_instance = Chefs::Creator.new(fields: fields[:chef].fields).()
-        chef_instance.attributes.slice(:id)
+        { chef_id: chef_instance.id }
       else
         {}
       end
-
-      {
-        chef_attributes: attributes
-      }
     end
   end
 end
