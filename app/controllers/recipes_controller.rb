@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    recipe = Recipe.find_by(id: params[:id])
-    @decorated_recipe = ::RecipeDecorator.new(recipe)
+    @recipe = Recipe.includes(:chef, :tags).find_by(id: params[:id])
+    redirect_to root_path if @recipe.nil?
   end
 end

@@ -1,1 +1,24 @@
-<%= @decorated_recipe.title %>
+<div class="tile is-ancestor">
+  <div class="tile is-4 is-vertical is-parent">
+    <div class="tile is-child box">
+      <%= image_tag @recipe.image %>
+    </div>
+    <% if @recipe.chef.present? %>
+      <div class="tile is-child box">
+        <p class="title">Chef</p>
+        <p><%= @recipe.chef.name %></p>
+      </div>
+    <% end %>
+  </div>
+  <div class="tile is-parent">
+    <div class="tile is-child box">
+      <p class="title"><%= @recipe.title %></p>
+      <p class="subtitle">
+        <% @recipe.tags.each do |tag| %>
+          <span class="tag is-success"><%= tag.name %></span>
+        <% end %>
+      </p>
+      <p><%= @recipe.description %></p>
+    </div>
+  </div>
+</div>

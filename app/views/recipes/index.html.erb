@@ -1,7 +1,14 @@
-<h1>Recipes#index</h1>
-
 <% @recipes.each do |recipe| %>
-  <%= recipe.title %>
-  <%= recipe.image %>
-  <%= link_to 'Show', recipe_url(recipe) %>
+  <article class="tile is-child box">
+    <div class="columns is-mobile is-centered is-vcentered">
+      <div class="column">
+        <%= image_tag recipe.image %>
+      </div>
+      <div class="column">
+          <p class="title"><%= recipe.title %></p>
+          <p class="subtitle"><%= link_to 'Full recipe', recipe_url(recipe) %></p>
+      </div>
+    </div>
+  </article>
+  </br>
 <% end %>
