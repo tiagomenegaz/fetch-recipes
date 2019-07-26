@@ -18,7 +18,7 @@
           <span class="tag is-success"><%= tag.name %></span>
         <% end %>
       </p>
-      <p><%= @recipe.description %></p>
+      <p><%= markdown(@recipe.description).html_safe %></p>
     </div>
   </div>
 </div>
