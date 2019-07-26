@@ -10,10 +10,10 @@ RSpec.describe RecipesController, type: :controller do
   end
 
   describe "GET #show" do
-    it "returns http success" do
-      get :show
+    xit "returns http success" do
+      recipe = Recipe.create!(title: "title", image: "image", description: "description")
+      get :show, id: recipe.id
       expect(response).to have_http_status(:success)
     end
   end
-
 end
