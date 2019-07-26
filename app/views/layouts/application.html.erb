@@ -13,9 +13,11 @@
   <body>
     <section class="hero is-small is-primary">
       <div class="hero-body">
-        <div class="container">
-          <p class="title is-2">Discover delicious recipes here!</p>
-        </div>
+        <%= link_to root_path do %>
+          <div class="container">
+            <p class="title is-2">Discover delicious recipes here!</p>
+          </div>
+        <% end %>
       </div>
     </section>
     <section class="section">
