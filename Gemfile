@@ -45,7 +45,7 @@ gem 'contentful', '~> 2.13', '>= 2.13.1'
 
 gem 'bulma-rails', '~> 0.7.5'
 
-gem 'redcarpet', '~> 3.4'
+gem 'redcarpet', '~> 3.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
